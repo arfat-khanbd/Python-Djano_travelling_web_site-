@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator by Arfat</title>
+  <link rel="stylesheet" href="/stc/css/bootstrap.css">
+  <style>
+    label {
+      text-size: 40px;
+      color: #0E5144EB;
+      text-shadow: 2px 2px #E7E9D7;
+      font-size: 18px;
+
+    }
+
+    #re {
+      text-align: center;
+      text-align: center;
+      margin-top: 9px;
+      text-size: 40px;
+      color: #0E5144EB;
+      text-shadow: 2px 2px #E7E9D7;
+      font-size: 18px;
+
+    }
+
+    #re2 {
+      ;
+
+      text-align: center;
+      margin-top: 20px;
+      color: #C8E4D0;
+      font-size: 18px;
+      text-shadow: 2px 2px #323633;
+
+    }
+  </style>
+</head>
+
+<body class="bg-dark my-4 mx-4">
+  <div class="container" style="height:300px ;background-color:#8C8D94; border: 3px solid #DBDCDC ; border-radius: 10px">
+    <label>python :</label>
+    <input type="text" id="in1" class="form-control" placeholder="enter value ">
+    <label>JavaScript :</label>
+    <input type="text" id="in2" class="form-control" placeholder="enter value ">
+    <label>Html : </label>
+    <input type="text" id="in3" class="form-control" placeholder="enter value ">
+    <label>Css : </label>
+    <input type="text" id="in4" class="form-control" placeholder="enter value ">
+  </div>
+  <div id="re"> </div>
+  <div calss="my-4" style="height: 107px; background-color:#8C8D94 ; border: 3px solid #DBDCDC ; margin-top : 4px; border-radius: 6px;">
+    <div id="re2" class="blockquote"></div>
+  </div>
+  <div class="my-4 bg-dark" style="margin-left:80px"> <button class="btn btn-info" style="; " id="btn" onclick="main()" type="submit"> Get Result</button></div>
+  <script>
+    const main = () => {
+      let a = document.getElementById("in1").value
+      let b = document.getElementById("in2").value
+      let c = document.getElementById("in3").value
+      let d = document.getElementById("in4").value
+      let e = parseFloat(a) + parseFloat(b) + parseFloat(c) + parseFloat(d);
+      let f = 400;
+      let g = "";
+      let h = e / f * 100;
+      if (80 <= h && h <= 100) {
+        g = "A+"
+      }
+      else if (70 <= h && 89 >= h) {
+        g = "A"
+
+      }
+      else if (60 <= h && 79 >= h) {
+        g = "A-"
+
+      }
+      else if (50 <= h && 69 >= h) {
+        g = "B"
+      }
+      else if (40 <= h && 49 >= h) {
+        g = "C"
+      }
+      else if (33 <= h && 39 >= h) {
+        g = "E"
+      }
+      else {
+        g = "F"
+      }
+      if (h < 33) {
+        document.getElementById("re2").innerHTML = `You got tottal ${e} out of 400. your persentace is ${h} % and grade is ${g} so you are Failed `
+      }
+      else if (h > 33) {
+        document.getElementById("re2").innerText = `you got tottal ${e} out of 400, your persentace ${h} % and grade is ${g}, so you are passed `
+      }
+
+
+
+    }
+  </script>
+</body>
+
+</html>
